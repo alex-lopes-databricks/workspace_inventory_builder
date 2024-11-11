@@ -102,7 +102,7 @@ resources:
             notebook_path: ../src/CreateView.ipynb      
             base_parameters:
               config: ../src/conf/
-        - task_key: create_view
+        - task_key: create_dashboard
           notebook_task:
             notebook_path: ../src/CreateDashboard.py      
         

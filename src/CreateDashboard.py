@@ -1,9 +1,4 @@
 # Databricks notebook source
-# MAGIC %pip install --upgrade databricks-sdk
-
-# COMMAND ----------
-
-# MAGIC %restart_python
 
 # COMMAND ----------
 dbutils.widgets.text("catalog_schema", "shared.workspace_inventory")
@@ -21,7 +16,7 @@ w = WorkspaceClient()
 # COMMAND ----------
 
 try:
-  with open("Data Storage Analysis.lvdash.json.tmpl", "r") as f:
+  with open("WorkspaceInventory.lvdash.json.tmpl", "r") as f:
     s = Template(f.read())    
     w.lakeview.create("Workspace Inventory", serialized_dashboard=s.substitute(catalog_schema=catalog_schema))
     print("Dashboard was created")
