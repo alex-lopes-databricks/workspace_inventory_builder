@@ -5,7 +5,7 @@
 <img src="Imgs/Compute.png" height="75%" width="75%">
 <img src="Imgs/MachineLearning.png" height="75%" width="75%">
 
-The 'workspace_inventory' prohject will scan a Databricks workspace and extract data of the objects in the workspace and save as delta tables, with this data it build a dashboard to provide an overview of all the objects in the workspace
+The 'workspace_inventory' project will scan a Databricks workspace and extract data of the objects in the workspace and save as delta tables, with this data it build a dashboard to provide an overview of all the objects in the workspace
 
 ## How does it work
 
