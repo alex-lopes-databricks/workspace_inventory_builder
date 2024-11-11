@@ -2,4 +2,4 @@
     call: w.experiments.list_experiments
     write:    
       mode: overwrite
-      table: "shared.bigc.experiments"
+      table: experiments

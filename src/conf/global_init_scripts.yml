@@ -2,4 +2,4 @@
     call: w.global_init_scripts.list
     write:    
       mode: overwrite
-      table: "shared.bigc.global_init_scripts"
+      table: global_init_scripts

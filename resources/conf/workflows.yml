@@ -1,5 +1,0 @@
-- api:
-    call: "w.jobs.list"
-    write:    
-      mode: overwrite
-      table: "shared.bigc.workflows"

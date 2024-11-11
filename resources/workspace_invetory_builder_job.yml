@@ -1,0 +1,108 @@
+# The main job for storage_analyzer.
+variables: 
+  catalog_schema:
+    description: "Catalog and schema where tables will be saved"
+    default: shared.workspace_inventory
+resources:
+  jobs:
+    workspace_inventory_builder_job:
+      name: workspace_inventory_builder
+      parameters:
+        - name: catalog_schema
+          default: ${var.catalog_schema}
+      tasks:
+        - task_key: notebooks
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/notebooks.yml
+        - task_key: alerts
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/alerts.yml
+        - task_key: clusters
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/clusters.yml              
+        - task_key: experiments
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/experiments.yml              
+        - task_key: global_init_scripts
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/global_init_scripts.yml              
+        - task_key: instance_pools
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/instance_pools.yml              
+        - task_key: ip_access_lists
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/ip_access_lists.yml              
+        - task_key: models
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/models.yml                          
+        - task_key: pipelines
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/pipelines.yml   
+        - task_key: recipients
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/recipients.yml   
+        - task_key: repos
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/repos.yml   
+        - task_key: secrets
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/secrets.yml   
+        - task_key: shares
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/shares.yml   
+        - task_key: storage_credentials
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/storage_credentials.yml                 
+        - task_key: warehouses
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/warehouses.yml                 
+        - task_key: workflows
+          notebook_task:
+            notebook_path: ../src/APIToDelta.ipynb      
+            base_parameters:
+              config: ../src/conf/storage_credentials.yml                 
+    workspace_inventory_builder_create_view_dashboard_job:    
+      name: workspace_inventory_builder_create_view_dashboard
+      parameters:
+        - name: catalog_schema
+          default: ${var.catalog_schema}
+      tasks:
+        - task_key: create_view
+          notebook_task:
+            notebook_path: ../src/CreateView.ipynb      
+            base_parameters:
+              config: ../src/conf/
+        - task_key: create_view
+          notebook_task:
+            notebook_path: ../src/CreateDashboard.py      
+        

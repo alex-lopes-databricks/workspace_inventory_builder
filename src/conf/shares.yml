@@ -2,4 +2,4 @@
     call: w.shares.list
     write:    
       mode: overwrite
-      table: "shared.bigc.shares"
+      table: shares

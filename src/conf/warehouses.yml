@@ -2,4 +2,4 @@
     call: w.warehouses.list
     write:    
       mode: overwrite
-      table: "shared.bigc.warehouses"
+      table: warehouses

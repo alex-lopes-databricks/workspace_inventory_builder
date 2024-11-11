@@ -2,4 +2,4 @@
     call: w.alerts.list
     write:    
       mode: overwrite
-      table: "shared.bigc.alerts"
+      table: alerts

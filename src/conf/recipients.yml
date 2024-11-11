@@ -1,0 +1,5 @@
+- api:
+    call: w.recipients.list
+    write:    
+      mode: overwrite
+      table: recipients

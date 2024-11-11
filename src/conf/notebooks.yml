@@ -6,4 +6,4 @@
       recursive: True
     write:    
       mode: overwrite
-      table: "shared.bigc.notebooks"
+      table: notebooks
