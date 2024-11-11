@@ -1,0 +1,5 @@
+- api:
+    call: w.instance_pools.list
+    write:    
+      mode: overwrite
+      table: "shared.bigc.instance_pools"

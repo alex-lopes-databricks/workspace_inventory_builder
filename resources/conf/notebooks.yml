@@ -1,0 +1,9 @@
+- api:
+    call: "w.workspace.list"
+    cargs:  
+      - "/"
+    kargs:
+      recursive: True
+    write:    
+      mode: overwrite
+      table: "shared.bigc.notebooks"

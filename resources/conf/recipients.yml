@@ -1,0 +1,7 @@
+- api:
+    call: w.recipients.list
+    write:    
+      mode: overwrite
+      options:
+        mergeSchema: True
+      table: shared.bigc.recipients
