@@ -90,7 +90,7 @@ resources:
           notebook_task:
             notebook_path: ../src/APIToDelta.ipynb      
             base_parameters:
-              config: ../src/conf/storage_credentials.yml                 
+              config: ../src/conf/workflows.yml                 
     workspace_inventory_builder_create_view_dashboard_job:    
       name: workspace_inventory_builder_create_view_dashboard
       parameters:
